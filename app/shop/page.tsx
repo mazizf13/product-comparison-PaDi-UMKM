@@ -1,5 +1,5 @@
 import Layout from "@/components/Layout";
-import CardProduct from "@/components/card/CardProduct";
+import CardProduct from "@/components/product/CardProduct";
 import { products } from "@/data/product";
 import React from "react";
 
