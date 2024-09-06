@@ -38,11 +38,12 @@ const ComparisonPopup: React.FC<ComparisonPopupProps> = ({
           <table className="min-w-full table-auto border-collapse">
             <thead>
               <tr>
-                <th className="px-4 text-left">
+                <th className="py-2 text-center font-semibold">
                   <Button
                     variant="default"
                     onClick={handlePrint}
-                    className="flex items-center rounded-md bg-[#009EA9] text-white transition-colors hover:bg-[#32acb5]"
+                    size="sm"
+                    className="mr-4 flex items-center rounded-md bg-[#009EA9] text-white transition-colors hover:bg-[#32acb5]"
                   >
                     <Printer className="mr-1" size={18} />
                     Download
@@ -107,10 +108,7 @@ const ComparisonPopup: React.FC<ComparisonPopupProps> = ({
               </tr>
               <tr>
                 <td className="py-4 text-left font-semibold">
-                  <Star
-                    className="mr-2 inline-block text-yellow-500"
-                    size={18}
-                  />
+                  <Star className="mr-2 inline-block" size={18} />
                   <span>Rating</span>
                 </td>
                 {products.map((product) => (

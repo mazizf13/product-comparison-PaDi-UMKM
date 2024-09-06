@@ -2,6 +2,7 @@
 
 import Layout from "@/components/Layout";
 import CardMedia from "@/components/card/CardMedia";
+import { Button } from "@/components/ui/button";
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 
@@ -64,13 +65,14 @@ const Media: React.FC = () => {
                     ))
                 )}
               </section>
-              <button
+              <Button
+                variant="default"
                 onClick={loadMore}
                 disabled={visibleArticles >= articles.length}
-                className="mt-6 w-full rounded bg-[#009EA9] px-4 py-2 text-white hover:bg-[#50bcc4] disabled:opacity-50"
+                className="mt-6 w-full rounded bg-[#009EA9] px-4 py-2 text-white hover:bg-[#2a969d] disabled:opacity-50"
               >
                 Load More
-              </button>
+              </Button>
             </div>
           </div>
         </div>

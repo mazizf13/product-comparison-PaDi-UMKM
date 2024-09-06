@@ -1,21 +1,20 @@
 import { Product } from "@/data/product";
 import { MapPin, ShoppingCart, Star } from "lucide-react";
-import React, { useState } from "react";
+import React from "react";
 
 interface CardProductProps {
   product: Product;
+  isChecked: boolean;
   onCompareSelect: (selected: boolean, product: Product) => void;
 }
 
 const CardProduct: React.FC<CardProductProps> = ({
   product,
+  isChecked,
   onCompareSelect,
 }) => {
-  const [isSelected, setIsSelected] = useState(false);
-
   const handleCheckboxChange = () => {
-    setIsSelected(!isSelected);
-    onCompareSelect(!isSelected, product);
+    onCompareSelect(!isChecked, product);
   };
 
   return (
@@ -48,9 +47,9 @@ const CardProduct: React.FC<CardProductProps> = ({
 
       <input
         type="checkbox"
-        checked={isSelected}
+        checked={isChecked}
         onChange={handleCheckboxChange}
-        className="absolute right-4 top-4"
+        className="absolute right-4 top-4 h-6 w-6"
       />
     </div>
   );
