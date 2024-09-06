@@ -7,6 +7,7 @@ export interface Product {
   totalSold: number;
   rating: number;
   img: string;
+  material: string; // Bahan tas
 }
 
 export const products: Product[] = [
@@ -19,7 +20,8 @@ export const products: Product[] = [
     location: "Jakarta, Indonesia",
     totalSold: 150,
     rating: 4.5,
-    img: "https://picsum.photos/id/1/300/200",
+    img: "https://elizabeth.co.id/wp-content/uploads/2023/07/0032-0922-05_0.jpg",
+    material: "Kulit sapi",
   },
   {
     id: 2,
@@ -29,7 +31,8 @@ export const products: Product[] = [
     location: "Bandung, Indonesia",
     totalSold: 120,
     rating: 4.3,
-    img: "https://picsum.photos/id/2/300/200",
+    img: "https://tokonindy.com/cdn/uploads/120211025195316.jpg",
+    material: "Kanvas",
   },
   {
     id: 3,
@@ -39,7 +42,8 @@ export const products: Product[] = [
     location: "Surabaya, Indonesia",
     totalSold: 100,
     rating: 4.7,
-    img: "https://picsum.photos/id/3/300/200",
+    img: "https://img.lazcdn.com/g/p/e519cea445c6839dec3352ef5a0f3dcc.jpg_720x720q80.jpg",
+    material: "Poliester",
   },
   {
     id: 4,
@@ -50,7 +54,8 @@ export const products: Product[] = [
     location: "Yogyakarta, Indonesia",
     totalSold: 85,
     rating: 4.2,
-    img: "https://picsum.photos/id/4/300/200",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-BpN-AieLh0NaN9RgymaEOqNykkoSEAt6jg&s",
+    material: "Kulit sintetis",
   },
   {
     id: 5,
@@ -60,7 +65,8 @@ export const products: Product[] = [
     location: "Jakarta, Indonesia",
     totalSold: 200,
     rating: 4.8,
-    img: "https://picsum.photos/id/5/300/200",
+    img: "https://images.tokopedia.net/img/cache/500-square/product-1/2017/11/15/6583532/6583532_6bc49270-6fd2-4f74-8c3c-1407255c4c8b_700_700.jpg",
+    material: "Kulit asli",
   },
   {
     id: 6,
@@ -70,7 +76,8 @@ export const products: Product[] = [
     location: "Bandung, Indonesia",
     totalSold: 95,
     rating: 4.4,
-    img: "https://picsum.photos/id/6/300/200",
+    img: "https://cdn.gramedia.com/uploads/items/1_DwVd3gH.jpg",
+    material: "Nilon",
   },
   {
     id: 7,
@@ -80,7 +87,8 @@ export const products: Product[] = [
     location: "Surabaya, Indonesia",
     totalSold: 60,
     rating: 4.1,
-    img: "https://picsum.photos/id/7/300/200",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBmnQH0EdNxR8dzgjwKbIqnKP-0a-ZJ-9k9w&s",
+    material: "Satin",
   },
   {
     id: 8,
@@ -90,7 +98,8 @@ export const products: Product[] = [
     location: "Jakarta, Indonesia",
     totalSold: 130,
     rating: 4.6,
-    img: "https://picsum.photos/id/8/300/200",
+    img: "https://elizabeth.co.id/wp-content/uploads/2023/07/0706-1584-77_0.jpg",
+    material: "Neoprene",
   },
   {
     id: 9,
@@ -100,7 +109,8 @@ export const products: Product[] = [
     location: "Yogyakarta, Indonesia",
     totalSold: 110,
     rating: 4.5,
-    img: "https://picsum.photos/id/9/300/200",
+    img: "https://down-id.img.susercontent.com/file/9a69f0ca03dbd48dc429a63b71522164",
+    material: "Kanvas",
   },
   {
     id: 10,
@@ -110,7 +120,8 @@ export const products: Product[] = [
     location: "Bandung, Indonesia",
     totalSold: 140,
     rating: 4.3,
-    img: "https://picsum.photos/id/10/300/200",
+    img: "https://images.tokopedia.net/img/cache/700/VqbcmM/2021/10/1/8bab914d-4976-42a4-8b0f-7394451621cd.jpg",
+    material: "Poliester",
   },
   {
     id: 11,
@@ -120,7 +131,8 @@ export const products: Product[] = [
     location: "Surabaya, Indonesia",
     totalSold: 90,
     rating: 4.4,
-    img: "https://picsum.photos/id/11/300/200",
+    img: "https://images.tokopedia.net/img/cache/500-square/hDjmkQ/2023/12/9/b89f9bda-7de6-44a9-a99e-1c41cd3835cd.jpg",
+    material: "Kulit PU",
   },
   {
     id: 12,
@@ -130,7 +142,8 @@ export const products: Product[] = [
     location: "Jakarta, Indonesia",
     totalSold: 80,
     rating: 4.2,
-    img: "https://picsum.photos/id/12/300/200",
+    img: "https://images.tokopedia.net/img/cache/500-square/VqbcmM/2023/7/27/41cbe70d-8f2f-4a63-af02-d5fe8083e14f.jpg",
+    material: "Denim",
   },
   {
     id: 13,
@@ -140,7 +153,8 @@ export const products: Product[] = [
     location: "Yogyakarta, Indonesia",
     totalSold: 75,
     rating: 4.0,
-    img: "https://picsum.photos/id/13/300/200",
+    img: "https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full/catalog-image/103/MTA-158552941/brd-44261_goldies-bags-tas-ransel-anak-tas-anak-laki-laki-tas-sekolah-anak-sd-abu-01_full08-9897907e.jpg",
+    material: "Poliester",
   },
   {
     id: 14,
@@ -150,7 +164,8 @@ export const products: Product[] = [
     location: "Bandung, Indonesia",
     totalSold: 110,
     rating: 4.3,
-    img: "https://picsum.photos/id/14/300/200",
+    img: "https://down-id.img.susercontent.com/file/sg-11134201-23020-2ehco9shizmv81",
+    material: "Katun daur ulang",
   },
   {
     id: 15,
@@ -160,7 +175,8 @@ export const products: Product[] = [
     location: "Surabaya, Indonesia",
     totalSold: 95,
     rating: 4.5,
-    img: "https://picsum.photos/id/15/300/200",
+    img: "https://i.pinimg.com/236x/5a/f6/f1/5af6f13358ef5cf5af2bb60315c6438d.jpg",
+    material: "Nilon tahan air",
   },
   {
     id: 16,
@@ -171,7 +187,8 @@ export const products: Product[] = [
     location: "Jakarta, Indonesia",
     totalSold: 140,
     rating: 4.4,
-    img: "https://picsum.photos/id/16/300/200",
+    img: "https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//catalog-image/83/MTA-101053341/no_brand_tas_be_your_style_tr011_tas_ransel_backpack_sekolah_full06_fyd4s8gj.jpg",
+    material: "Kulit sintetis",
   },
   {
     id: 17,
@@ -181,7 +198,8 @@ export const products: Product[] = [
     location: "Bandung, Indonesia",
     totalSold: 100,
     rating: 4.7,
-    img: "https://picsum.photos/id/17/300/200",
+    img: "https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full/catalog-image/102/MTA-166294137/elizabeth-bag_elizabeth-bag_full06.jpg",
+    material: "Kulit asli",
   },
   {
     id: 18,
@@ -191,7 +209,8 @@ export const products: Product[] = [
     location: "Surabaya, Indonesia",
     totalSold: 85,
     rating: 4.2,
-    img: "https://picsum.photos/id/18/300/200",
+    img: "https://down-id.img.susercontent.com/file/sg-11134201-22100-11mkpsd9wsivd4",
+    material: "Kulit asli",
   },
   {
     id: 19,
@@ -201,7 +220,8 @@ export const products: Product[] = [
     location: "Yogyakarta, Indonesia",
     totalSold: 120,
     rating: 4.3,
-    img: "https://picsum.photos/id/19/300/200",
+    img: "https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//95/MTA-90031808/oem_oem_full01.jpg",
+    material: "Kulit asli",
   },
   {
     id: 20,
@@ -211,7 +231,8 @@ export const products: Product[] = [
     location: "Jakarta, Indonesia",
     totalSold: 70,
     rating: 4.9,
-    img: "https://picsum.photos/id/20/300/200",
+    img: "https://down-id.img.susercontent.com/file/e69b2f633bdd3da51d864c0ed0e409e1",
+    material: "Kulit asli",
   },
   {
     id: 21,
@@ -221,6 +242,7 @@ export const products: Product[] = [
     location: "Jakarta, Indonesia",
     totalSold: 70,
     rating: 4.9,
-    img: "https://picsum.photos/id/21/300/200",
+    img: "https://media.karousell.com/media/photos/products/2019/06/26/tas_ransel_backpack_korea_1561497550_6875f6a5_progressive.jpg",
+    material: "Kulit asli",
   },
 ];

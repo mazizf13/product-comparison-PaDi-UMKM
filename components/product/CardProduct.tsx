@@ -1,27 +1,25 @@
-"use client";
-
-import { Button } from "../ui/button";
 import { Product } from "@/data/product";
 import { MapPin, ShoppingCart, Star } from "lucide-react";
-import { useRouter } from "next/navigation";
-import React from "react";
+import React, { useState } from "react";
 
 interface CardProductProps {
   product: Product;
+  onCompareSelect: (selected: boolean, product: Product) => void;
 }
 
-const CardProduct: React.FC<CardProductProps> = ({ product }) => {
-  const router = useRouter();
+const CardProduct: React.FC<CardProductProps> = ({
+  product,
+  onCompareSelect,
+}) => {
+  const [isSelected, setIsSelected] = useState(false);
 
-  const handleCardClick = () => {
-    router.push(`/product/${product.id}`);
+  const handleCheckboxChange = () => {
+    setIsSelected(!isSelected);
+    onCompareSelect(!isSelected, product);
   };
 
   return (
-    <div
-      className="relative cursor-pointer rounded-lg border p-4 shadow-md transition-shadow hover:shadow-lg"
-      onClick={handleCardClick}
-    >
+    <div className="relative cursor-pointer rounded-lg border p-4 shadow-md transition-shadow hover:shadow-lg">
       <img
         src={product.img}
         alt={product.name}
@@ -48,12 +46,12 @@ const CardProduct: React.FC<CardProductProps> = ({ product }) => {
         <span>{product.rating.toFixed(1)}</span>
       </div>
 
-      <Button
-        variant="default"
-        className="absolute bottom-4 right-4 rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600"
-      >
-        Bandingkan
-      </Button>
+      <input
+        type="checkbox"
+        checked={isSelected}
+        onChange={handleCheckboxChange}
+        className="absolute right-4 top-4"
+      />
     </div>
   );
 };
