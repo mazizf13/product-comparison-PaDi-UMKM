@@ -3,6 +3,14 @@
 import Layout from "@/components/Layout";
 import CardProduct from "@/components/product/CardProduct";
 import ComparisonPopup from "@/components/product/ComparisonDialog";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -60,17 +68,34 @@ const Shop = () => {
 
   return (
     <Layout>
-      <div className="container mx-auto p-4">
-        <h1 className="mb-6 text-3xl font-bold">Belanja di PaDi UMKM</h1>
+      <Breadcrumb>
+        <BreadcrumbList className="mt-8 px-36">
+          <BreadcrumbItem>
+            <BreadcrumbLink href="#">Beranda</BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbLink href="#">Produk</BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbPage className="font-bold">Tas</BreadcrumbPage>
+          </BreadcrumbItem>
+        </BreadcrumbList>
+      </Breadcrumb>
 
-        <Button
-          variant="default"
-          size="lg"
-          className="mb-6 w-full rounded bg-[#009EA9] px-4 py-2 text-white hover:bg-[#32acb5]"
-          onClick={handleCompareClick}
-        >
-          Bandingkan Produk
-        </Button>
+      <div className="container mx-auto p-4 px-36">
+        <div className="sticky top-[112px] z-50 w-full">
+          <Button
+            variant="default"
+            size="lg"
+            className="mb-8 w-full rounded-lg bg-[#009EA9] px-4 py-2 text-white hover:bg-[#228d94]"
+            onClick={handleCompareClick}
+          >
+            Bandingkan Produk
+          </Button>
+        </div>
+
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
           {products.map((product) => (
             <CardProduct
