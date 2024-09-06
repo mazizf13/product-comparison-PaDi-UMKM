@@ -7,7 +7,9 @@ export interface Product {
   totalSold: number;
   rating: number;
   img: string;
-  material: string; // Bahan tas
+  material: string;
+  size: string;
+  weight: string;
 }
 
 export const products: Product[] = [
@@ -22,6 +24,8 @@ export const products: Product[] = [
     rating: 4.5,
     img: "https://elizabeth.co.id/wp-content/uploads/2023/07/0032-0922-05_0.jpg",
     material: "Kulit sapi",
+    size: "45x30x15 cm",
+    weight: "500 gram",
   },
   {
     id: 2,
@@ -33,6 +37,8 @@ export const products: Product[] = [
     rating: 4.3,
     img: "https://tokonindy.com/cdn/uploads/120211025195316.jpg",
     material: "Kanvas",
+    size: "48x32x16 cm",
+    weight: "600 gram",
   },
   {
     id: 3,
@@ -44,6 +50,8 @@ export const products: Product[] = [
     rating: 4.7,
     img: "https://img.lazcdn.com/g/p/e519cea445c6839dec3352ef5a0f3dcc.jpg_720x720q80.jpg",
     material: "Poliester",
+    size: "45x31x17 cm",
+    weight: "550 gram",
   },
   {
     id: 4,
@@ -56,6 +64,8 @@ export const products: Product[] = [
     rating: 4.2,
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-BpN-AieLh0NaN9RgymaEOqNykkoSEAt6jg&s",
     material: "Kulit sintetis",
+    size: "46x32x16 cm",
+    weight: "555 gram",
   },
   {
     id: 5,
@@ -67,6 +77,8 @@ export const products: Product[] = [
     rating: 4.8,
     img: "https://images.tokopedia.net/img/cache/500-square/product-1/2017/11/15/6583532/6583532_6bc49270-6fd2-4f74-8c3c-1407255c4c8b_700_700.jpg",
     material: "Kulit asli",
+    size: "48x32x18 cm",
+    weight: "700 gram",
   },
   {
     id: 6,
@@ -78,6 +90,8 @@ export const products: Product[] = [
     rating: 4.4,
     img: "https://cdn.gramedia.com/uploads/items/1_DwVd3gH.jpg",
     material: "Nilon",
+    size: "45x34x16 cm",
+    weight: "600 gram",
   },
   {
     id: 7,
@@ -89,6 +103,8 @@ export const products: Product[] = [
     rating: 4.1,
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBmnQH0EdNxR8dzgjwKbIqnKP-0a-ZJ-9k9w&s",
     material: "Satin",
+    size: "46x32x18 cm",
+    weight: "600 gram",
   },
   {
     id: 8,
@@ -100,6 +116,8 @@ export const products: Product[] = [
     rating: 4.6,
     img: "https://elizabeth.co.id/wp-content/uploads/2023/07/0706-1584-77_0.jpg",
     material: "Neoprene",
+    size: "46x28x16 cm",
+    weight: "600 gram",
   },
   {
     id: 9,
@@ -111,6 +129,8 @@ export const products: Product[] = [
     rating: 4.5,
     img: "https://down-id.img.susercontent.com/file/9a69f0ca03dbd48dc429a63b71522164",
     material: "Kanvas",
+    size: "46x35x17 cm",
+    weight: "700 gram",
   },
   {
     id: 10,
@@ -122,6 +142,8 @@ export const products: Product[] = [
     rating: 4.3,
     img: "https://images.tokopedia.net/img/cache/700/VqbcmM/2021/10/1/8bab914d-4976-42a4-8b0f-7394451621cd.jpg",
     material: "Poliester",
+    size: "42x32x16 cm",
+    weight: "450 gram",
   },
   {
     id: 11,
@@ -133,6 +155,8 @@ export const products: Product[] = [
     rating: 4.4,
     img: "https://images.tokopedia.net/img/cache/500-square/hDjmkQ/2023/12/9/b89f9bda-7de6-44a9-a99e-1c41cd3835cd.jpg",
     material: "Kulit PU",
+    size: "30x250x15 cm",
+    weight: "500 gram",
   },
   {
     id: 12,
@@ -144,10 +168,12 @@ export const products: Product[] = [
     rating: 4.2,
     img: "https://images.tokopedia.net/img/cache/500-square/VqbcmM/2023/7/27/41cbe70d-8f2f-4a63-af02-d5fe8083e14f.jpg",
     material: "Denim",
+    size: "35x20x15 cm",
+    weight: "500 gram",
   },
   {
     id: 13,
-    name: "Organizer Perjalanan",
+    name: "Tas Organizer Perjalanan",
     description: "Jaga barang-barang penting perjalanan Anda tetap teratur.",
     price: 125000,
     location: "Yogyakarta, Indonesia",
@@ -155,6 +181,8 @@ export const products: Product[] = [
     rating: 4.0,
     img: "https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full/catalog-image/103/MTA-158552941/brd-44261_goldies-bags-tas-ransel-anak-tas-anak-laki-laki-tas-sekolah-anak-sd-abu-01_full08-9897907e.jpg",
     material: "Poliester",
+    size: "55x35x20 cm",
+    weight: "800 gram",
   },
   {
     id: 14,
@@ -166,6 +194,8 @@ export const products: Product[] = [
     rating: 4.3,
     img: "https://down-id.img.susercontent.com/file/sg-11134201-23020-2ehco9shizmv81",
     material: "Katun daur ulang",
+    size: "35x30x10 cm",
+    weight: "200 gram",
   },
   {
     id: 15,
@@ -177,6 +207,8 @@ export const products: Product[] = [
     rating: 4.5,
     img: "https://i.pinimg.com/236x/5a/f6/f1/5af6f13358ef5cf5af2bb60315c6438d.jpg",
     material: "Nilon tahan air",
+    size: "45x35x16 cm",
+    weight: "650 gram",
   },
   {
     id: 16,
@@ -189,6 +221,8 @@ export const products: Product[] = [
     rating: 4.4,
     img: "https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//catalog-image/83/MTA-101053341/no_brand_tas_be_your_style_tr011_tas_ransel_backpack_sekolah_full06_fyd4s8gj.jpg",
     material: "Kulit sintetis",
+    size: "20x15x6 cm",
+    weight: "300 gram",
   },
   {
     id: 17,
@@ -200,6 +234,8 @@ export const products: Product[] = [
     rating: 4.7,
     img: "https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full/catalog-image/102/MTA-166294137/elizabeth-bag_elizabeth-bag_full06.jpg",
     material: "Kulit asli",
+    size: "40x25x15 cm",
+    weight: "500 gram",
   },
   {
     id: 18,
@@ -211,6 +247,8 @@ export const products: Product[] = [
     rating: 4.2,
     img: "https://down-id.img.susercontent.com/file/sg-11134201-22100-11mkpsd9wsivd4",
     material: "Kulit asli",
+    size: "47x30x15 cm",
+    weight: "520 gram",
   },
   {
     id: 19,
@@ -222,6 +260,8 @@ export const products: Product[] = [
     rating: 4.3,
     img: "https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//95/MTA-90031808/oem_oem_full01.jpg",
     material: "Kulit asli",
+    size: "48x32x15 cm",
+    weight: "550 gram",
   },
   {
     id: 20,
@@ -233,16 +273,20 @@ export const products: Product[] = [
     rating: 4.9,
     img: "https://down-id.img.susercontent.com/file/e69b2f633bdd3da51d864c0ed0e409e1",
     material: "Kulit asli",
+    size: "25x15x10 cm",
+    weight: "350 gram",
   },
   {
     id: 21,
-    name: "Tas Tangan Mewah",
-    description: "Tas tangan mewah dengan finishing premium.",
+    name: "Tas Eiger",
+    description: "Tas outdoor eiger dengan bahan premium.",
     price: 500000,
     location: "Jakarta, Indonesia",
     totalSold: 70,
     rating: 4.9,
     img: "https://media.karousell.com/media/photos/products/2019/06/26/tas_ransel_backpack_korea_1561497550_6875f6a5_progressive.jpg",
-    material: "Kulit asli",
+    material: "Polyester Grade A",
+    size: "45x30x15 cm",
+    weight: "500 gram",
   },
 ];

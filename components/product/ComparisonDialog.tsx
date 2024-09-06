@@ -13,6 +13,8 @@ import {
   DollarSign,
   Tag,
   Printer,
+  Ruler,
+  Weight,
 } from "lucide-react";
 
 interface ComparisonPopupProps {
@@ -80,8 +82,36 @@ const ComparisonPopup: React.FC<ComparisonPopupProps> = ({
               </tr>
               <tr>
                 <td className="py-4 text-left font-semibold">
+                  <DollarSign className="mr-2 inline-block" size={18} />
+                  <span>Harga</span>
+                </td>
+                {products.map((product) => (
+                  <td
+                    key={product.id}
+                    className="border-l border-gray-300 py-4 text-center"
+                  >
+                    <span>Rp {product.price.toLocaleString("id-ID")}</span>
+                  </td>
+                ))}
+              </tr>
+              <tr>
+                <td className="py-4 text-left font-semibold">
+                  <MapPin className="mr-2 inline-block" size={18} />
+                  <span>Lokasi</span>
+                </td>
+                {products.map((product) => (
+                  <td
+                    key={product.id}
+                    className="border-l border-gray-300 py-4 text-center"
+                  >
+                    <span>{product.location}</span>
+                  </td>
+                ))}
+              </tr>
+              <tr>
+                <td className="py-4 text-left font-semibold">
                   <Tag className="mr-2 inline-block" size={18} />
-                  <span>Material</span>
+                  <span>Bahan</span>
                 </td>
                 {products.map((product) => (
                   <td
@@ -94,15 +124,29 @@ const ComparisonPopup: React.FC<ComparisonPopupProps> = ({
               </tr>
               <tr>
                 <td className="py-4 text-left font-semibold">
-                  <DollarSign className="mr-2 inline-block" size={18} />
-                  <span>Price</span>
+                  <Ruler className="mr-2 inline-block" size={18} />
+                  <span>Ukuran</span>
                 </td>
                 {products.map((product) => (
                   <td
                     key={product.id}
                     className="border-l border-gray-300 py-4 text-center"
                   >
-                    <span>Rp {product.price.toLocaleString("id-ID")}</span>
+                    <span>{product.size}</span>
+                  </td>
+                ))}
+              </tr>
+              <tr>
+                <td className="py-4 text-left font-semibold">
+                  <Weight className="mr-2 inline-block" size={18} />
+                  <span>Berat</span>
+                </td>
+                {products.map((product) => (
+                  <td
+                    key={product.id}
+                    className="border-l border-gray-300 py-4 text-center"
+                  >
+                    <span>{product.weight}</span>
                   </td>
                 ))}
               </tr>
@@ -122,22 +166,8 @@ const ComparisonPopup: React.FC<ComparisonPopupProps> = ({
               </tr>
               <tr>
                 <td className="py-4 text-left font-semibold">
-                  <MapPin className="mr-2 inline-block" size={18} />
-                  <span>Location</span>
-                </td>
-                {products.map((product) => (
-                  <td
-                    key={product.id}
-                    className="border-l border-gray-300 py-4 text-center"
-                  >
-                    <span>{product.location}</span>
-                  </td>
-                ))}
-              </tr>
-              <tr>
-                <td className="py-4 text-left font-semibold">
                   <ShoppingCart className="mr-2 inline-block" size={18} />
-                  <span>Sold</span>
+                  <span>Terjual</span>
                 </td>
                 {products.map((product) => (
                   <td
