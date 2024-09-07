@@ -1,6 +1,6 @@
 "use client";
 
-import Layout from "@/components/Layout";
+import LayoutShop from "@/components/LayoutShop";
 import CardProduct from "@/components/product/CardProduct";
 import ComparisonPopup from "@/components/product/ComparisonDialog";
 import {
@@ -67,7 +67,7 @@ const Shop = () => {
   };
 
   return (
-    <Layout>
+    <LayoutShop>
       <Breadcrumb>
         <BreadcrumbList className="mt-2 p-4 md:px-36">
           <BreadcrumbItem>
@@ -123,7 +123,7 @@ const Shop = () => {
           </DialogContent>
         </Dialog>
       </div>
-    </Layout>
+    </LayoutShop>
   );
 };
 

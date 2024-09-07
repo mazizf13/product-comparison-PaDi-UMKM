@@ -49,7 +49,7 @@ const CardProduct: React.FC<CardProductProps> = ({
         type="checkbox"
         checked={isChecked}
         onChange={handleCheckboxChange}
-        className="absolute right-4 top-4 h-6 w-6"
+        className="absolute right-4 top-4 h-6 w-6 cursor-pointer"
       />
     </div>
   );
