@@ -83,7 +83,7 @@ const NavBar: React.FC = () => {
           )}
         </Button>
 
-        <ul className="ml-2 hidden items-center space-x-8 lg:flex">
+        <ul className="ml-6 hidden items-center space-x-8 lg:flex">
           <li className="cursor-pointer">
             <Bell className="h-6 w-6 text-gray-800" />
           </li>
@@ -106,7 +106,7 @@ const NavBar: React.FC = () => {
               <Button
                 variant="default"
                 onClick={() => setShowLogoutDialog(true)}
-                className="rounded-lg border-[1px] border-[#009EA9] bg-[#009EA9] px-3 py-2 text-white hover:bg-[#65b6bb]"
+                className="ml-8 rounded-lg border-[1px] border-[#009EA9] bg-[#009EA9] px-3 py-2 text-white hover:bg-[#2daeb5]"
               >
                 Logout
               </Button>
