@@ -49,13 +49,15 @@ const NavBar: React.FC = () => {
     <nav className="sticky top-0 z-50 border-b bg-white text-gray-800">
       <div className="flex items-center justify-between px-10 py-3 lg:px-20 xl:px-40">
         <div className="max-h-[87px] w-fit xl:w-52">
-          <img
-            src="https://info.padiumkm.id/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FLogo_PADI_UMKM.cc043879.svg&w=128&q=100"
-            alt="Logo"
-          />
+          <a href="/">
+            <img
+              src="https://info.padiumkm.id/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FLogo_PADI_UMKM.cc043879.svg&w=128&q=100"
+              alt="Logo"
+            />
+          </a>
         </div>
 
-        <div className="hidden cursor-pointer items-start space-x-3 lg:flex">
+        <div className="mr-16 hidden cursor-pointer items-start space-x-3 lg:flex">
           <LayoutGrid className="h-6 w-6 text-slate-300" />
           <span className="text-[18px]">Kategori</span>
         </div>
@@ -146,7 +148,7 @@ const NavBar: React.FC = () => {
               alt="Evi Kunthi"
               className="h-8 w-8 rounded-full"
             />
-            <span>Evi Kunthi</span>
+            <span>Evi</span>
           </li>
           {isAuthenticated && !isLoginPage && (
             <li className="w-full cursor-pointer">
