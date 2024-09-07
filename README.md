@@ -9,13 +9,17 @@ PaDi UMKM is a trusted B2B marketplace in Indonesia, connecting Usaha Mikro, Kec
 ```bash
 git clone https://github.com/mazizf13/product-comparison-padi-umkm
 ```
+
 ```bash
 cd product-comparison-padi-umkm
 ```
+
 ```bash
 npm install
 ```
+
 ```bash
 npm run dev
 ```
-Open ```http://localhost:3000``` with your browser to see the result.
+
+Open `http://localhost:3000` with your browser to see the result.

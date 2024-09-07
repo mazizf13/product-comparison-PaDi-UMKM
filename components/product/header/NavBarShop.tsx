@@ -66,6 +66,7 @@ const NavBar: React.FC = () => {
           <Input
             type="text"
             defaultValue="Tas"
+            placeholder="Cari produk, jasa atau vendor"
             className="bg-transparent text-gray-800"
           />
           <Search className="h-6 w-6 cursor-pointer text-gray-800" />
@@ -96,10 +97,10 @@ const NavBar: React.FC = () => {
           <li className="flex cursor-pointer items-center space-x-2">
             <img
               src="https://w7.pngwing.com/pngs/122/453/png-transparent-computer-icons-user-profile-avatar-female-profile-heroes-head-woman-thumbnail.png"
-              alt="Evi"
+              alt="Team1"
               className="h-8 w-8 rounded-full"
             />
-            <span>Evi</span>
+            <span>Team1</span>
           </li>
           {isAuthenticated && !isLoginPage && (
             <li className="cursor-pointer">
@@ -119,7 +120,8 @@ const NavBar: React.FC = () => {
       <div className="mx-4 mt-2 flex items-center space-x-2 rounded-lg border border-gray-300 px-3 active:border-gray-600 lg:hidden">
         <Input
           type="text"
-          value="Tas"
+          defaultValue="Tas"
+          placeholder="Cari produk, jasa atau vendor"
           className="bg-transparent text-gray-800"
         />
         <Search className="h-6 w-6 cursor-pointer text-gray-800" />
@@ -145,10 +147,10 @@ const NavBar: React.FC = () => {
           <li className="flex cursor-pointer items-center space-x-2">
             <img
               src="https://w7.pngwing.com/pngs/122/453/png-transparent-computer-icons-user-profile-avatar-female-profile-heroes-head-woman-thumbnail.png"
-              alt="Evi Kunthi"
+              alt="Team1"
               className="h-8 w-8 rounded-full"
             />
-            <span>Evi</span>
+            <span>Team1</span>
           </li>
           {isAuthenticated && !isLoginPage && (
             <li className="w-full cursor-pointer">

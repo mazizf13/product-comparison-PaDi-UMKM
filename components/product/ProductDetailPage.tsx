@@ -3,7 +3,16 @@
 import { Button } from "../ui/button";
 import LayoutShop from "@/components/LayoutShop";
 import { useProduct } from "@/hooks/useProduct";
-import { MapPin, Ruler, ShoppingCart, Star, Weight } from "lucide-react";
+import {
+  Columns,
+  Hand,
+  MapPin,
+  Phone,
+  Ruler,
+  ShoppingCart,
+  Star,
+  Weight,
+} from "lucide-react";
 import { useParams } from "next/navigation";
 import React from "react";
 
@@ -19,7 +28,7 @@ const ProductDetailPage: React.FC = () => {
   return (
     <LayoutShop>
       <div className="container mx-auto p-4">
-        <div className="flex flex-col md:flex-row md:items-start">
+        <div className="flex flex-col md:mb-14 md:flex-row md:items-start">
           <img
             src={product.img}
             alt={product.name}
@@ -58,29 +67,33 @@ const ProductDetailPage: React.FC = () => {
               <span>{product.rating.toFixed(1)}</span>
             </div>
 
-            <div className="mr-36 mt-6 grid grid-cols-2 gap-4">
+            <div className="mb-14 mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 md:mr-36">
               <Button
                 variant="default"
-                className="rounded bg-[#009EA9] px-4 py-2 text-white hover:bg-[#228d94]"
+                className="w-full rounded bg-[#009EA9] px-4 py-2 text-white hover:bg-[#228d94]"
               >
-                + Keranjang
+                <ShoppingCart className="mr-2 h-6 w-6 text-white" />
+                Keranjang
               </Button>
               <Button
                 variant="outline"
-                className="rounded border-[#009EA9] px-6 py-3 text-[#009EA9] hover:bg-[#228d94] hover:text-white"
+                className="w-full rounded border-[#009EA9] px-6 py-3 text-[#009EA9] hover:bg-[#228d94] hover:text-white"
               >
+                <Phone className="mr-2 h-6 w-6" />
                 Chat Penjual
               </Button>
               <Button
                 variant="outline"
-                className="rounded border-[#009EA9] px-6 py-3 text-[#009EA9] hover:bg-[#228d94] hover:text-white"
+                className="w-full rounded border-[#009EA9] px-6 py-3 text-[#009EA9] hover:bg-[#228d94] hover:text-white"
               >
+                <Hand className="mr-2 h-6 w-6" />
                 Ajukan Penawaran
               </Button>
               <Button
                 variant="default"
-                className="rounded bg-[#009EA9] px-4 py-2 text-white hover:bg-[#228d94]"
+                className="w-full rounded bg-[#009EA9] px-4 py-2 text-white hover:bg-[#228d94]"
               >
+                <Columns className="mr-2 h-6 w-6 text-white" />
                 Bandingkan Produk
               </Button>
             </div>
