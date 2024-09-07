@@ -79,6 +79,7 @@ const Login = () => {
                       placeholder="padi@umkm.id"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
+                      className="border border-slate-300 active:border-slate-500"
                     />
                   </div>
                   <div className="relative mb-4">
@@ -92,6 +93,7 @@ const Login = () => {
                         placeholder="12345678"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
+                        className="border border-slate-300 active:border-slate-500"
                       />
                       <button
                         type="button"
@@ -99,9 +101,9 @@ const Login = () => {
                         className="absolute inset-y-0 right-0 flex items-center pr-3"
                       >
                         {showPassword ? (
-                          <EyeOff className="h-5 w-5 text-gray-500" />
-                        ) : (
                           <Eye className="h-5 w-5 text-gray-500" />
+                        ) : (
+                          <EyeOff className="h-5 w-5 text-gray-500" />
                         )}
                       </button>
                     </div>

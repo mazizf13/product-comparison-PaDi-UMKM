@@ -6,6 +6,7 @@ import {
   AlertDialogTrigger,
 } from "../ui/alert-dialog";
 import { Button } from "../ui/button";
+import useAlert from "@/hooks/useAlert";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
@@ -17,6 +18,7 @@ const NavBar: React.FC = () => {
   const [showLogoutDialog, setShowLogoutDialog] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
+  const { isAlertVisible, alertMessage, showAlert, hideAlert } = useAlert(); // Use the alert hook
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -35,7 +37,16 @@ const NavBar: React.FC = () => {
     router.push("/login");
   };
 
-  const isLoginPage = pathname === "/login";
+  const handleLinkClick = (path: string) => {
+    if (!isAuthenticated) {
+      showAlert("Anda harus login terlebih dahulu"); // Show alert message
+      setTimeout(() => {
+        router.push("/login"); // Redirect to login after showing alert
+      }, 2000); // Delay to allow the user to see the alert
+    } else {
+      router.push(path);
+    }
+  };
 
   return (
     <nav className="sticky top-0 z-50 border-b bg-white text-gray-800">
@@ -61,56 +72,53 @@ const NavBar: React.FC = () => {
 
         <ul className="hidden items-center space-x-10 text-gray-800 lg:flex">
           <li className="group cursor-pointer">
-            <Link href="/">
-              <span
-                className={`text-[18px] hover:text-[#009EA9] ${pathname === "/" ? "active-link" : ""}`}
-              >
-                Beranda
-              </span>
-            </Link>
+            <span
+              onClick={() => handleLinkClick("/")}
+              className={`text-[18px] hover:text-[#009EA9] ${pathname === "/" ? "active-link" : ""}`}
+            >
+              Beranda
+            </span>
           </li>
           <li className="group cursor-pointer">
-            <Link href="/about-us">
-              <span
-                className={`text-[18px] hover:text-[#009EA9] ${pathname === "/about-us" ? "active-link" : ""}`}
-              >
-                Tentang Kami
-              </span>
-            </Link>
+            <span
+              onClick={() => handleLinkClick("/about-us")}
+              className={`text-[18px] hover:text-[#009EA9] ${pathname === "/about-us" ? "active-link" : ""}`}
+            >
+              Tentang Kami
+            </span>
           </li>
           <li className="group cursor-pointer">
-            <Link href="/help">
-              <span
-                className={`text-[18px] hover:text-[#009EA9] ${pathname === "/help" ? "active-link" : ""}`}
-              >
-                Bantuan
-              </span>
-            </Link>
+            <span
+              onClick={() => handleLinkClick("/help")}
+              className={`text-[18px] hover:text-[#009EA9] ${pathname === "/help" ? "active-link" : ""}`}
+            >
+              Bantuan
+            </span>
           </li>
           <li className="group cursor-pointer">
-            <Link href="/media">
-              <span
-                className={`text-[18px] hover:text-[#009EA9] ${pathname === "/media" ? "active-link" : ""}`}
-              >
-                Media
-              </span>
-            </Link>
+            <span
+              onClick={() => handleLinkClick("/media")}
+              className={`text-[18px] hover:text-[#009EA9] ${pathname === "/media" ? "active-link" : ""}`}
+            >
+              Media
+            </span>
           </li>
           <li className="group cursor-pointer">
-            <Link href="/contact">
-              <span
-                className={`text-[18px] hover:text-[#009EA9] ${pathname === "/contact" ? "active-link" : ""}`}
-              >
-                Kontak
-              </span>
-            </Link>
+            <span
+              onClick={() => handleLinkClick("/contact")}
+              className={`text-[18px] hover:text-[#009EA9] ${pathname === "/contact" ? "active-link" : ""}`}
+            >
+              Kontak
+            </span>
           </li>
           <li className="group cursor-pointer">
             <div className="cursor-pointer rounded-lg border-[1px] border-[#009EA9] px-3 py-2 text-[#009EA9]">
-              <Link href="/shop">Belanja di PaDi UMKM</Link>
+              <span onClick={() => handleLinkClick("/shop")}>
+                Belanja di PaDi UMKM
+              </span>
             </div>
           </li>
-          {isAuthenticated && !isLoginPage && (
+          {isAuthenticated && (
             <li className="group cursor-pointer">
               <Button
                 variant="default"
@@ -131,54 +139,51 @@ const NavBar: React.FC = () => {
       >
         <ul className="space-y-4">
           <li className="group cursor-pointer">
-            <Link href="/">
-              <span
-                className={`text-[18px] hover:text-[#009EA9] ${pathname === "/" ? "active-link" : ""}`}
-              >
-                Beranda
-              </span>
-            </Link>
+            <span
+              onClick={() => handleLinkClick("/")}
+              className={`text-[18px] hover:text-[#009EA9] ${pathname === "/" ? "active-link" : ""}`}
+            >
+              Beranda
+            </span>
           </li>
           <li className="group cursor-pointer">
-            <Link href="/about-us">
-              <span
-                className={`text-[18px] hover:text-[#009EA9] ${pathname === "/about-us" ? "active-link" : ""}`}
-              >
-                Tentang Kami
-              </span>
-            </Link>
+            <span
+              onClick={() => handleLinkClick("/about-us")}
+              className={`text-[18px] hover:text-[#009EA9] ${pathname === "/about-us" ? "active-link" : ""}`}
+            >
+              Tentang Kami
+            </span>
           </li>
           <li className="group cursor-pointer">
-            <Link href="/help">
-              <span
-                className={`text-[18px] hover:text-[#009EA9] ${pathname === "/help" ? "active-link" : ""}`}
-              >
-                Bantuan
-              </span>
-            </Link>
+            <span
+              onClick={() => handleLinkClick("/help")}
+              className={`text-[18px] hover:text-[#009EA9] ${pathname === "/help" ? "active-link" : ""}`}
+            >
+              Bantuan
+            </span>
           </li>
           <li className="group cursor-pointer">
-            <Link href="/media">
-              <span
-                className={`text-[18px] hover:text-[#009EA9] ${pathname === "/media" ? "active-link" : ""}`}
-              >
-                Media
-              </span>
-            </Link>
+            <span
+              onClick={() => handleLinkClick("/media")}
+              className={`text-[18px] hover:text-[#009EA9] ${pathname === "/media" ? "active-link" : ""}`}
+            >
+              Media
+            </span>
           </li>
           <li className="group cursor-pointer">
-            <Link href="/contact">
-              <span
-                className={`text-[18px] hover:text-[#009EA9] ${pathname === "/contact" ? "active-link" : ""}`}
-              >
-                Kontak
-              </span>
-            </Link>
+            <span
+              onClick={() => handleLinkClick("/contact")}
+              className={`text-[18px] hover:text-[#009EA9] ${pathname === "/contact" ? "active-link" : ""}`}
+            >
+              Kontak
+            </span>
           </li>
           <div className="cursor-pointer rounded-lg border-[1px] border-[#009EA9] px-3 py-2 text-[#009EA9]">
-            <Link href="/shop">Belanja di PaDi UMKM</Link>
+            <span onClick={() => handleLinkClick("/shop")}>
+              Belanja di PaDi UMKM
+            </span>
           </div>
-          {isAuthenticated && !isLoginPage && (
+          {isAuthenticated && (
             <li className="group w-full cursor-pointer">
               <Button
                 variant="default"
@@ -204,6 +209,22 @@ const NavBar: React.FC = () => {
           </Button>
         </AlertDialogContent>
       </AlertDialog>
+
+      {/* Alert dialog for login required */}
+      {isAlertVisible && (
+        <AlertDialog open={isAlertVisible} onOpenChange={hideAlert}>
+          <AlertDialogTrigger />
+          <AlertDialogContent>
+            <p>{alertMessage}</p>
+            <Button
+              onClick={hideAlert}
+              className="bg-[#009EA9] hover:bg-[#65b6bb]"
+            >
+              OK
+            </Button>
+          </AlertDialogContent>
+        </AlertDialog>
+      )}
     </nav>
   );
 };
