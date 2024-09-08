@@ -10,6 +10,8 @@ export interface Product {
   material: string;
   size: string;
   weight: string;
+  totalCompare: number;
+  totalViews: number;
 }
 
 export const products: Product[] = [
@@ -26,6 +28,8 @@ export const products: Product[] = [
     material: "Kulit sapi",
     size: "45x30x15 cm",
     weight: "500 gram",
+    totalCompare: 12,
+    totalViews: 10,
   },
   {
     id: 2,
@@ -39,6 +43,8 @@ export const products: Product[] = [
     material: "Kanvas",
     size: "48x32x16 cm",
     weight: "600 gram",
+    totalCompare: 21,
+    totalViews: 10,
   },
   {
     id: 3,
@@ -52,6 +58,8 @@ export const products: Product[] = [
     material: "Poliester",
     size: "45x31x17 cm",
     weight: "550 gram",
+    totalCompare: 11,
+    totalViews: 10,
   },
   {
     id: 4,
@@ -62,10 +70,12 @@ export const products: Product[] = [
     location: "Yogyakarta, Indonesia",
     totalSold: 85,
     rating: 4.2,
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-BpN-AieLh0NaN9RgymaEOqNykkoSEAt6jg&s",
+    img: "https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//catalog-image/108/MTA-109862981/brd-22389_tas-selempang-lopez-tas-pria-tas-kekinian-tas-slempang-waistbag-ransel-khanzacare-id_full03.jpg",
     material: "Kulit sintetis",
     size: "46x32x16 cm",
     weight: "555 gram",
+    totalCompare: 9,
+    totalViews: 10,
   },
   {
     id: 5,
@@ -79,6 +89,8 @@ export const products: Product[] = [
     material: "Kulit asli",
     size: "48x32x18 cm",
     weight: "700 gram",
+    totalCompare: 90,
+    totalViews: 10,
   },
   {
     id: 6,
@@ -92,6 +104,8 @@ export const products: Product[] = [
     material: "Nilon",
     size: "45x34x16 cm",
     weight: "600 gram",
+    totalCompare: 10,
+    totalViews: 10,
   },
   {
     id: 7,
@@ -105,6 +119,8 @@ export const products: Product[] = [
     material: "Satin",
     size: "46x32x18 cm",
     weight: "600 gram",
+    totalCompare: 5,
+    totalViews: 10,
   },
   {
     id: 8,
@@ -118,6 +134,8 @@ export const products: Product[] = [
     material: "Neoprene",
     size: "46x28x16 cm",
     weight: "600 gram",
+    totalCompare: 45,
+    totalViews: 10,
   },
   {
     id: 9,
@@ -131,6 +149,8 @@ export const products: Product[] = [
     material: "Kanvas",
     size: "46x35x17 cm",
     weight: "700 gram",
+    totalCompare: 26,
+    totalViews: 10,
   },
   {
     id: 10,
@@ -144,6 +164,8 @@ export const products: Product[] = [
     material: "Poliester",
     size: "42x32x16 cm",
     weight: "450 gram",
+    totalCompare: 29,
+    totalViews: 10,
   },
   {
     id: 11,
@@ -157,6 +179,8 @@ export const products: Product[] = [
     material: "Kulit PU",
     size: "30x250x15 cm",
     weight: "500 gram",
+    totalCompare: 34,
+    totalViews: 10,
   },
   {
     id: 12,
@@ -170,6 +194,8 @@ export const products: Product[] = [
     material: "Denim",
     size: "35x20x15 cm",
     weight: "500 gram",
+    totalCompare: 46,
+    totalViews: 10,
   },
   {
     id: 13,
@@ -183,6 +209,8 @@ export const products: Product[] = [
     material: "Poliester",
     size: "55x35x20 cm",
     weight: "800 gram",
+    totalCompare: 47,
+    totalViews: 10,
   },
   {
     id: 14,
@@ -196,6 +224,8 @@ export const products: Product[] = [
     material: "Katun daur ulang",
     size: "35x30x10 cm",
     weight: "200 gram",
+    totalCompare: 20,
+    totalViews: 10,
   },
   {
     id: 15,
@@ -209,6 +239,8 @@ export const products: Product[] = [
     material: "Nilon tahan air",
     size: "45x35x16 cm",
     weight: "650 gram",
+    totalCompare: 56,
+    totalViews: 10,
   },
   {
     id: 16,
@@ -223,6 +255,8 @@ export const products: Product[] = [
     material: "Kulit sintetis",
     size: "20x15x6 cm",
     weight: "300 gram",
+    totalCompare: 69,
+    totalViews: 10,
   },
   {
     id: 17,
@@ -236,6 +270,8 @@ export const products: Product[] = [
     material: "Kulit asli",
     size: "40x25x15 cm",
     weight: "500 gram",
+    totalCompare: 89,
+    totalViews: 10,
   },
   {
     id: 18,
@@ -249,6 +285,8 @@ export const products: Product[] = [
     material: "Kulit asli",
     size: "47x30x15 cm",
     weight: "520 gram",
+    totalCompare: 98,
+    totalViews: 10,
   },
   {
     id: 19,
@@ -262,6 +300,8 @@ export const products: Product[] = [
     material: "Kulit asli",
     size: "48x32x15 cm",
     weight: "550 gram",
+    totalCompare: 78,
+    totalViews: 10,
   },
   {
     id: 20,
@@ -275,6 +315,8 @@ export const products: Product[] = [
     material: "Kulit asli",
     size: "25x15x10 cm",
     weight: "350 gram",
+    totalCompare: 39,
+    totalViews: 10,
   },
   {
     id: 21,
@@ -288,5 +330,7 @@ export const products: Product[] = [
     material: "Polyester Grade A",
     size: "45x30x15 cm",
     weight: "500 gram",
+    totalCompare: 89,
+    totalViews: 10,
   },
 ];

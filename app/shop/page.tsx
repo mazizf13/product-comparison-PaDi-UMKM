@@ -22,7 +22,7 @@ import {
 import { products } from "@/data/product";
 import useAlert from "@/hooks/useAlert";
 import useComparison from "@/hooks/useComparison";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const Shop = () => {
   const {
@@ -35,6 +35,23 @@ const Shop = () => {
   const { isAlertVisible, alertMessage, showAlert, hideAlert } = useAlert();
   const [showComparison, setShowComparison] = useState(false);
   const [selectedCheckboxes, setSelectedCheckboxes] = useState<number[]>([]);
+  const [comparisonCounts, setComparisonCounts] = useState<{
+    [key: number]: number;
+  }>({});
+
+  useEffect(() => {
+    const counts = products.reduce(
+      (acc, product) => {
+        const storedCount = localStorage.getItem(`compareCount_${product.id}`);
+        acc[product.id] = storedCount
+          ? parseInt(storedCount, 10)
+          : product.totalCompare;
+        return acc;
+      },
+      {} as { [key: number]: number },
+    );
+    setComparisonCounts(counts);
+  }, []);
 
   const handleCompareSelect = (selected: boolean, product: any) => {
     if (selected) {
@@ -62,6 +79,18 @@ const Shop = () => {
 
   const handleClosePopup = () => {
     setShowComparison(false);
+
+    comparedProducts.forEach((product) => {
+      setComparisonCounts((prevCounts) => {
+        const newCount = (prevCounts[product.id] || 0) + 1;
+        localStorage.setItem(`compareCount_${product.id}`, newCount.toString());
+        return {
+          ...prevCounts,
+          [product.id]: newCount,
+        };
+      });
+    });
+
     clearComparison();
     setSelectedCheckboxes([]);
   };
@@ -104,6 +133,9 @@ const Shop = () => {
               product={product}
               isChecked={selectedCheckboxes.includes(product.id)}
               onCompareSelect={handleCompareSelect}
+              compareCount={
+                comparisonCounts[product.id] || product.totalCompare
+              }
             />
           ))}
         </div>

@@ -2,26 +2,41 @@ import { Input } from "../ui/input";
 import { Product } from "@/data/product";
 import { MapPin, ShoppingCart, Star } from "lucide-react";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 interface CardProductProps {
   product: Product;
   isChecked: boolean;
   onCompareSelect: (selected: boolean, product: Product) => void;
+  compareCount: number;
 }
 
 const CardProduct: React.FC<CardProductProps> = ({
   product,
   isChecked,
   onCompareSelect,
+  compareCount,
 }) => {
+  const [viewCount, setViewCount] = useState<number>(() => {
+    const storedViews = localStorage.getItem(`viewCount_${product.id}`);
+    return storedViews ? parseInt(storedViews, 10) : product.totalViews;
+  });
+
+  useEffect(() => {
+    localStorage.setItem(`viewCount_${product.id}`, viewCount.toString());
+  }, [viewCount, product.id]);
+
   const handleCheckboxChange = () => {
     onCompareSelect(!isChecked, product);
   };
 
   return (
     <div className="relative cursor-pointer rounded-lg border p-4 shadow-md transition-shadow hover:shadow-lg">
-      <Link href={`/product/${product.id}`} passHref>
+      <Link
+        href={`/product/${product.id}`}
+        passHref
+        onClick={() => setViewCount(viewCount + 1)}
+      >
         <img
           src={product.img}
           alt={product.name}
@@ -55,6 +70,10 @@ const CardProduct: React.FC<CardProductProps> = ({
         onChange={handleCheckboxChange}
         className="absolute right-4 top-4 h-6 w-6 cursor-pointer"
       />
+
+      <div className="absolute bottom-4 right-4 text-sm text-gray-500">
+        {compareCount} x dibandingkan | {viewCount} x dilihat
+      </div>
     </div>
   );
 };
