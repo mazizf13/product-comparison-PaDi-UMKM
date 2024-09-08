@@ -18,12 +18,17 @@ const CardProduct: React.FC<CardProductProps> = ({
   compareCount,
 }) => {
   const [viewCount, setViewCount] = useState<number>(() => {
-    const storedViews = localStorage.getItem(`viewCount_${product.id}`);
-    return storedViews ? parseInt(storedViews, 10) : product.totalViews;
+    if (typeof window !== "undefined") {
+      const storedViews = localStorage.getItem(`viewCount_${product.id}`);
+      return storedViews ? parseInt(storedViews, 10) : product.totalViews;
+    }
+    return product.totalViews;
   });
 
   useEffect(() => {
-    localStorage.setItem(`viewCount_${product.id}`, viewCount.toString());
+    if (typeof window !== "undefined") {
+      localStorage.setItem(`viewCount_${product.id}`, viewCount.toString());
+    }
   }, [viewCount, product.id]);
 
   const handleCheckboxChange = () => {

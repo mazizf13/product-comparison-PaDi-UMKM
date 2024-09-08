@@ -40,17 +40,19 @@ const Shop = () => {
   }>({});
 
   useEffect(() => {
-    const counts = products.reduce(
-      (acc, product) => {
-        const storedCount = localStorage.getItem(`compareCount_${product.id}`);
-        acc[product.id] = storedCount
-          ? parseInt(storedCount, 10)
-          : product.totalCompare;
-        return acc;
-      },
-      {} as { [key: number]: number },
-    );
-    setComparisonCounts(counts);
+    if (typeof window !== "undefined") {
+      const counts = products.reduce(
+        (acc, product) => {
+          const storedCount = localStorage.getItem(`compareCount_${product.id}`);
+          acc[product.id] = storedCount
+            ? parseInt(storedCount, 10)
+            : product.totalCompare;
+          return acc;
+        },
+        {} as { [key: number]: number },
+      );
+      setComparisonCounts(counts);
+    }
   }, []);
 
   const handleCompareSelect = (selected: boolean, product: any) => {
@@ -80,16 +82,18 @@ const Shop = () => {
   const handleClosePopup = () => {
     setShowComparison(false);
 
-    comparedProducts.forEach((product) => {
-      setComparisonCounts((prevCounts) => {
-        const newCount = (prevCounts[product.id] || 0) + 1;
-        localStorage.setItem(`compareCount_${product.id}`, newCount.toString());
-        return {
-          ...prevCounts,
-          [product.id]: newCount,
-        };
+    if (typeof window !== "undefined") {
+      comparedProducts.forEach((product) => {
+        setComparisonCounts((prevCounts) => {
+          const newCount = (prevCounts[product.id] || 0) + 1;
+          localStorage.setItem(`compareCount_${product.id}`, newCount.toString());
+          return {
+            ...prevCounts,
+            [product.id]: newCount,
+          };
+        });
       });
-    });
+    }
 
     clearComparison();
     setSelectedCheckboxes([]);
